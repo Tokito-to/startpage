@@ -1,0 +1,4 @@
+# web-ext artifacts
+src/web-ext-artifacts
+src/.web-extension-id
+src/.amo-upload-uuid
