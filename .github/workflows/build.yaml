@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    permissions: write-all
     runs-on: ubuntu-latest
 
     steps:
@@ -31,7 +32,7 @@ jobs:
       - name: Get version code
         id: version_code
         run: |
-          TAG=$(jq -r .version src/manifest.json)
+          TAG=v$(jq -r .version src/manifest.json)
           echo "VERSION=${TAG}" >> $GITHUB_OUTPUT
 
       - name: Upload modules to release
@@ -42,8 +43,8 @@ jobs:
             - Light/Dark Mode
             - Time-based greeting"
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ./src/web-ext-artifacts/*.xpi
+          file: ./web-ext-artifacts/*.xpi
           release_name: Custom Startpage
-          tag: v-${{ steps.ver_code.outputs.VERSION }}
+          tag: ${{ steps.version_code.outputs.VERSION }}
           file_glob: true
           overwrite: true

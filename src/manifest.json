@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "New Tab",
-    "version": "2.0.1",
+    "version": "2.0.4",
     "description": "Custom startpage",
     "author": "Tokito",
     "chrome_url_overrides": {
