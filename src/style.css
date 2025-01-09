@@ -9,32 +9,18 @@ body {
     text-align: center;
     font-family: 'Share Tech Mono', monospace;
 }
-@media all and (max-width: 550px) {
-    .info, hr
-    {
-        visibility: hidden;
-        margin: auto;
-    }
-    .watch, .social, .dev, .linux {
-        flex-direction: column;
-        width: auto;
-    }
+.mode_class{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 20px;
+    margin-right: 20px;
 }
-.list_title
-{
-    font-size: 35px;
+#mode {
+   filter: invert(100%) sepia(0%) saturate(1620%) hue-rotate(8deg) brightness(94%) contrast(88%)
 }
-.lists {
-    display: flex;
-    flex-wrap: wrap;
-    vertical-align: top;
-    justify-content: center;
-    font-family: 'Overpass Mono', monospace;
-}
-.watch, .social, .dev, .linux {
-    display: flex;
-    flex-direction: column;
-    padding: 40px;
+#mode:hover {
+    filter: invert(56%) sepia(45%) saturate(6917%) hue-rotate(173deg) brightness(96%) contrast(82%) !important
 }
 hr {
     margin-top: 40px;
@@ -48,104 +34,68 @@ a:visited, a:link, a:active {
     text-indent: 2px;
     line-height: 1.5;
 }
-a:hover {
-    color: #97cdfd !important
-}
-#greeter {
-    font-size: 32px;
-    color: #dee3de;
-}
 #time {
     font-size: 28px;
+    color: #77B8F8;
     animation:blinking 5s infinite;
-    }
-    @keyframes blinking{
-    0%{     color: #1383F2; }
-    20%{    color: #459EF7; }
-    40%{    color: #77B8F8; }
-    60%{    color: #77B8F8; }
-    80%{    color: #459EF7; }
-    100%{   color: #1383F2; }
 }
-
-#w {
-    animation:w_blink 5s infinite;
-    }
-    @keyframes w_blink{
-    0%{     color: #9866ED; }
-    20%{    color: #9B67F5; }
-    40%{    color: #9873D9; }
-    60%{    color: #834CE0; }
-    80%{    color: #7739E3; }
-    100%{   color: #9866ED; }
+#greeting {
+    font-size: 32px;
 }
-#s {
-    animation:s_blink 5s infinite;
-    }
-    @keyframes s_blink{
-    0%{     color: #5BE3AF; }
-    20%{    color: #22AB76; }
-    40%{    color: #1FC485; }
-    60%{    color: #5EB895; }
-    80%{    color: #66D9AD; }
-    100%{   color: #5BE3AF; }
-}
-#d {
-    animation:d_blink 5s infinite;
-    }
-    @keyframes d_blink{
-    0%{     color: #D1B22A; }
-    20%{    color: #D9C777; }
-    40%{    color: #D1B22A; }
-    60%{    color: #CCA806; }
-    80%{    color: #E0BE24; }
-    100%{   color: #D1B22A; }
-}
-#l {
-    animation:l_blink 5s infinite;
-    }
-    @keyframes l_blink{
-    0%{     color: #CF342B; }
-    20%{    color: #F2746D; }
-    40%{    color: #CF342B; }
-    60%{    color: #F7665E; }
-    80%{    color: #F2746D; }
-    100%{   color: #CF342B; }
-}
-#youtube:hover {
-    color: #FF0000 !important
-}
-#netflix:hover{
-    color: #E50914 !important
-}
-#twitch:hover{
-    color: #6441a5 !important
-}
-#reddit:hover{
-    color: #FF4500 !important
-}
-#twitter:hover{
-    color: #08a0e9 !important
-}
-#arch:hover {
-    color: #1793d1 !important
-}
-#stackoverflow:hover {
-    color: #EF8236 !important
-}
-.mode_class{
-    /*display: flex;
+.grid-container {
+    height: 28px;
+    padding-top: 20px;
+    margin-left: 14%;
+    display: grid;
+    opacity: 1;
+    gap: 12px 12px;
+    text-align: center;
     justify-content: center;
-    padding-top: 200px;*/
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 20px;
-    margin-right: 20px;
+    grid-template-columns: repeat(8, 8%);
+    grid-template-rows: repeat(2, 1fr);
+    transition: opacity .5s;
 }
-#mode {
-   filter: invert(100%) sepia(0%) saturate(1620%) hue-rotate(8deg) brightness(94%) contrast(88%)
+.icon-container {
+    text-align: center;
 }
-#mode:hover {
-    filter: invert(56%) sepia(45%) saturate(6917%) hue-rotate(173deg) brightness(96%) contrast(82%) !important
+.icon-container a, .icon-container button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.icon-container i {
+    font-size: 28px;
+    border-radius: 50%;
+    padding: 12px;
+    height: 28px;
+    width: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+.icon-container span {
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s;
+    padding-top: 10px;
+    font-family: 'Overpass Mono', monospace;
+}
+.github i, .github:hover span {
+    color: #c0e8fa !important;
+}
+.gitlab i, .gitlab:hover span  {
+    color: #E24329 !important;
+}
+.telegram i, .telegram:hover span {
+    color: #0088cc !important;
+}
+.itch i, .itch:hover span {
+    color: #f68f1e !important;
+}
+.protonmail i, .protonmail:hover span {
+    color: #a25c9a !important;
+}
+.nextdns i, .nextdns:hover span {
+    color: #00A3E0 !important;
 }
