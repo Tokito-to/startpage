@@ -1,10 +1,13 @@
 {
     "manifest_version": 2,
     "name": "New Tab",
-    "version": "1.0.5",
-    "description": "Custom new tab startpage",
+    "version": "1.0.6",
+    "description": "Custom startpage",
     "chrome_url_overrides": {
       "newtab": "startpage.html"
+    },
+    "chrome_settings_overrides": {
+      "homepage": "startpage.html"
     },
     "content_security_policy": "script-src 'self'; script-src 'unsafe-inline'; object-src 'self';"
 }
