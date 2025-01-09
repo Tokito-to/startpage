@@ -1,7 +1,7 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "New Tab",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "Custom startpage",
     "author": "Tokito",
     "chrome_url_overrides": {
@@ -10,6 +10,11 @@
     "chrome_settings_overrides": {
       "homepage": "startpage.html"
     },
+    "browser_specific_settings": {
+    "gecko": {
+      "id": "{03e764de-5e77-49b6-95e2-acb5c6544dd8}"
+       }
+    },
     "icons": {
       "16": "ico/16.png",
       "32": "ico/32.png",
@@ -17,5 +22,7 @@
       "64": "ico/64.png",
       "128": "ico/128.png"
     },
-    "content_security_policy": "script-src 'self'; script-src 'unsafe-inline'; object-src 'self';"
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self';"
+    }
 }

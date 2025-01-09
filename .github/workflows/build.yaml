@@ -1,0 +1,49 @@
+name: Build and Sign Firefox Extension
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+
+      - name: Install web-ext
+        run: npm install --global web-ext
+
+      - name: Lint Check
+        run: web-ext lint --source-dir ./src
+
+      - name: Build & Sign Firefox Extension
+        env:
+          AMO_JWT_ISSUER: ${{ secrets.AMO_JWT_ISSUER }}
+          AMO_JWT_SECRET: ${{ secrets.AMO_JWT_SECRET }}
+        run: web-ext sign --channel unlisted --api-key=$AMO_JWT_ISSUER --api-secret=$AMO_JWT_SECRET --source-dir ./src
+
+      - name: Get version code
+        id: version_code
+        run: |
+          TAG=$(jq -r .version src/manifest.json)
+          echo "VERSION=${TAG}" >> $GITHUB_OUTPUT
+
+      - name: Upload modules to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          body: "## Main features
+            - Quick access to your favorite websites
+            - Light/Dark Mode
+            - Time-based greeting"
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./src/web-ext-artifacts/*.xpi
+          release_name: Custom Startpage
+          tag: v-${{ steps.ver_code.outputs.VERSION }}
+          file_glob: true
+          overwrite: true
