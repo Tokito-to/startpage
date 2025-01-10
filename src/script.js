@@ -85,7 +85,7 @@ let input = document.getElementById("input");
 input.addEventListener("keypress", function (event) {
    if (event.key === 'Enter') {
        if (input.value !== "") {
-           const search_query = "https://start.duckduckgo.com/?q=" + encodeURIComponent(input.value);
+           const search_query = "https://duckduckgo.com/?q=" + encodeURIComponent(input.value);
            window.location.replace(search_query);
         }
        input.blur();
