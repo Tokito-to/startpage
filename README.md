@@ -3,14 +3,17 @@
 ![Screenshot](screenshot.png)
 
 ## Main features
-- Quick access to your favorite websites
 - Light/Dark Mode
 - Time-based greeting
+- Built-in search integration: (DuckDuckGO)
+    - __When focused on the search bar__:
+        - Press `Enter` to search
+- Quick access to your favorite websites
 ---
 
 # Set Custom Startpage As New Tab Page <a name="set-startpage"></a>
 
-## Build & Sign The Extension for Firefox
+## Build & Sign The Extension for Firefox (Locally)
 
 I use Mozilla's `web-ext` to build and sign my startpage extensions.
 
@@ -36,7 +39,7 @@ In your terminal:
 
 1. Clone the repository:
 ```
-git clone https://github.com/grtcdr/startpages
+git clone https://github.com/Kurumi-Tokito/startpage.git
 ```
 
 2. Navigate inside the __src__ directory of your desired startpage.
@@ -59,7 +62,7 @@ web-ext run
 - for more information on how to use the temporary addon
 [Read This Guide By Mozilla](https://extensionworkshop.com/documentation/develop/temporary-installation-in-firefox/)
 
-## Signing The Extension
+### Signing The Extension
 1. Sign the extension
 ```bash
 web-ext sign --api-key=$AMO_JWT_ISSUER --api-secret=$AMO_JWT_SECRET
@@ -79,4 +82,4 @@ directory, `web-ext-artifacts` has appeared, and it contains a `.xpi` file.
 
 3. Firefox will now prompt you to add the extension, click `Add`
 
-You're good to go, the custom startpage will now appear every time you open up a new tab page.
+You're good to go, the custom startpage will now appear every time you open up a new tab page and homepage.

@@ -39,9 +39,13 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           body: "## Main features
-            - Quick access to your favorite websites
+
             - Light/Dark Mode
-            - Time-based greeting"
+            - Time-based greeting
+            - Built-in search integration: (DuckDuckGO)
+                - __When focused on the search bar__:
+                    - Press `Enter` to search
+            - Quick access to your favorite websites"
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ./web-ext-artifacts/*.xpi
           release_name: Custom Startpage

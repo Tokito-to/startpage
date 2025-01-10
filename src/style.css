@@ -1,5 +1,7 @@
 body {
+    text-align: center;
     background-color: #0C131F;
+    text-rendering: optimizeLegibility;
 }
 .info {
     display: flex;
@@ -22,11 +24,6 @@ body {
 #mode:hover {
     filter: invert(56%) sepia(45%) saturate(6917%) hue-rotate(173deg) brightness(96%) contrast(82%) !important
 }
-hr {
-    margin-top: 40px;
-    color: #dee3de;
-    width: 500px;
-}
 a:visited, a:link, a:active {
     color: #bbb;
     text-decoration: none;
@@ -37,10 +34,21 @@ a:visited, a:link, a:active {
 #time {
     font-size: 28px;
     color: #77B8F8;
-    animation:blinking 5s infinite;
 }
 #greeting {
     font-size: 32px;
+}
+#input {
+    width: 500px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+#input:hover, #input:focus {
+    border-color: #03C0DD !important;
 }
 .grid-container {
     height: 28px;
