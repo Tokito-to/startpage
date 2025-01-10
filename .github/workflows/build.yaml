@@ -21,7 +21,7 @@ jobs:
         run: npm install --global web-ext
 
       - name: Lint Check
-        run: web-ext lint --source-dir ./src
+        run: web-ext lint --self-hosted --source-dir ./src
 
       - name: Build & Sign Firefox Extension
         env:
@@ -35,20 +35,45 @@ jobs:
           TAG=v$(jq -r .version src/manifest.json)
           echo "VERSION=${TAG}" >> $GITHUB_OUTPUT
 
-      - name: Upload modules to release
-        uses: svenstaro/upload-release-action@v2
-        with:
-          body: "## Main features
+      - name: Relase Body
+        id: body
+        run: |
+          DELIM="$(openssl rand -hex 8)"
+          echo "BODY<<${DELIM}" >> "$GITHUB_OUTPUT"
+          echo  "## Main features
 
             - Light/Dark Mode
             - Time-based greeting
             - Built-in search integration: (DuckDuckGO)
                 - __When focused on the search bar__:
                     - Press `Enter` to search
-            - Quick access to your favorite websites"
+            - Quick access to your favorite websites">> "$GITHUB_OUTPUT"
+          echo "${DELIM}" >> "$GITHUB_OUTPUT"
+
+      - name: Upload modules to release
+        uses: svenstaro/upload-release-action@v2
+        with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ./web-ext-artifacts/*.xpi
           release_name: Custom Startpage
           tag: ${{ steps.version_code.outputs.VERSION }}
+          body: ${{ steps.body.outputs.BODY }}
+          file: ./web-ext-artifacts/*.xpi
           file_glob: true
           overwrite: true
+
+      - name: Update JSON
+        run: |
+            VERSION="$(jq -r .version src/manifest.json)"
+            LINK="https://github.com/Kurumi-Tokito/startpage/releases/download/v${VERSION}/50fd4af065914df190c5-${VERSION}.xpi"
+            HASH="$(sha256sum ./web-ext-artifacts/*.xpi | cut -d' ' -f1)"
+
+            cp .github/workflows/update.json ./tmp.json
+            jq --arg VERSION "$VERSION" --arg LINK "$LINK" --arg HASH "sha256:$HASH" \
+              '.addons |= map_values(.updates += [{"version": $VERSION, "update_link": $LINK, "update_hash": $HASH}])' ./tmp.json > .github/workflows/update.json
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          branch: master
+          skip_checkout: true
+          file_pattern: .github/workflows/update.json
+          commit_message: "startpage: publish update"
