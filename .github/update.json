@@ -1,0 +1,17 @@
+{
+  "addons": {
+    "{03e764de-5e77-49b6-95e2-acb5c6544dd8}": {
+      "updates": [
+        {
+          "version": "2.0.6",
+          "update_link": "https://github.com/Kurumi-Tokito/startpage/releases/download/v2.0.6/50fd4af065914df190c5-2.0.6.xpi"
+        },
+        {
+          "version": "2.0.7",
+          "update_link": "https://github.com/Kurumi-Tokito/startpage/releases/download/v2.0.7/50fd4af065914df190c5-2.0.7.xpi",
+          "update_hash": "sha256:d279bac58a8b0f428a9c00fe37542ad4d46ad11450d067e9cba3590787699c02"
+        }
+      ]
+    }
+  }
+}
