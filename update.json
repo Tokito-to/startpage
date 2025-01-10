@@ -15,6 +15,11 @@
           "version": "2.1.3",
           "update_link": "https://github.com/Kurumi-Tokito/startpage/releases/download/v2.1.3/50fd4af065914df190c5-2.1.3.xpi",
           "update_hash": "sha256:a8880fb728c75d0b36e8c53a3d1ed8b0ee8b50ba2c3ec54b68738e3b6ac7a6f7"
+        },
+        {
+          "version": "2.1.4",
+          "update_link": "https://github.com/Kurumi-Tokito/startpage/releases/download/v2.1.4/50fd4af065914df190c5-2.1.4.xpi",
+          "update_hash": "sha256:7dcb37eb6334924c114d705ec336c917c3d6c007f12935b05daa02b8e20fe949"
         }
       ]
     }
