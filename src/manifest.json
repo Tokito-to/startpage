@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "StartPage",
-    "version": "2.1.5",
+    "version": "2.1.6",
     "description": "Custom startpage",
     "author": "Tokito",
     "chrome_url_overrides": {
@@ -13,7 +13,7 @@
     "browser_specific_settings": {
     "gecko": {
       "id": "{03e764de-5e77-49b6-95e2-acb5c6544dd8}",
-      "update_url": "https://raw.githubusercontent.com/Kurumi-Tokito/startpage/refs/heads/master/update.json"
+      "update_url": "https://raw.githubusercontent.com/Tokito-to/startpage/refs/heads/master/update.json"
        }
     },
     "icons": {
