@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "StartPage",
-    "version": "2.2.0",
+    "version": "2.2.1",
     "description": "Custom startpage",
     "author": "Tokito",
     "chrome_url_overrides": {
