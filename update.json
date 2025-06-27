@@ -30,6 +30,11 @@
           "version": "2.1.6",
           "update_link": "https://github.com/Kurumi-Tokito/startpage/releases/download/v2.1.6/50fd4af065914df190c5-2.1.6.xpi",
           "update_hash": "sha256:4b3b705656b536b33543e76c20945070c7cc68f1ff34bc55062a3b08c89c41e8"
+        },
+        {
+          "version": "2.2.0",
+          "update_link": "https://github.com/Tokito-to/startpage/releases/download/v2.2.0/50fd4af065914df190c5-2.2.0.xpi",
+          "update_hash": "sha256:0453bac92b6959f89c1dc45621113aea6af802cc81a10ffcab039c22b008d1ea"
         }
       ]
     }
