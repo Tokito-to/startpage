@@ -9,6 +9,7 @@
     - __When focused on the search bar__:
         - Press `Enter` to search
 - Quick access to your favorite websites
+- Now Completly Local i.e fonts and icons are packed within the extension
 ---
 
 # Set Custom Startpage As New Tab Page <a name="set-startpage"></a>
@@ -32,7 +33,7 @@ Install from NPM:
 ```bash
 npm install --global web-ext
 ```
-**Note:** Archlinux Has `web-ext` in official repo
+**Note:** Archlinux Has `web-ext` in AUR
 
 ### Building The Extension
 In your terminal:
