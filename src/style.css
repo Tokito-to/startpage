@@ -1,18 +1,16 @@
 body {
     text-align: center;
-    background-color: #0C131F;
+    background-color: var(--base);
     text-rendering: optimizeLegibility;
 }
 .mode_class{
     position: absolute;
     top: 0; right: 0;
     margin: 20px 20px 0 0;
-}
-#mode {
-   filter: invert(100%) sepia(0%) saturate(1620%) hue-rotate(8deg) brightness(94%) contrast(88%)
+    color: red;
 }
 #mode:hover {
-    filter: invert(56%) sepia(45%) saturate(6917%) hue-rotate(173deg) brightness(96%) contrast(82%) !important
+    filter: invert(80%) sepia(45%) saturate(6917%) hue-rotate(173deg) brightness(96%) contrast(82%) !important
 }
 .info {
     display: flex;
@@ -31,10 +29,11 @@ body {
 }
 #time {
     font-size: 28px;
-    color: #77B8F8;
+    color: var(--peach);
 }
-#greeting {
+#greeter {
     font-size: 32px;
+    color: var(--text);
 }
 #input {
     width: 45%;
@@ -43,10 +42,12 @@ body {
     text-align: center;
     outline: none;
     border: none;
+    border-bottom: 2px solid var(--mauve);
+    color: var(--text);
     background: transparent;
 }
 #input:hover, #input:focus {
-    border-color: #03C0DD !important;
+    border-color: var(--mauve) !important;
 }
 .grid-container {
     height: auto;
@@ -70,7 +71,7 @@ body {
     align-items: center;
 }
 a:visited, a:link, a:active {
-    color: #bbb;
+    color: var(--text);
     text-decoration: none;
     font-size: 26px;
     text-indent: 2px;
@@ -84,6 +85,7 @@ a:visited, a:link, a:active {
     justify-content: center;
     align-items: center;
     transition: background-color 0.3s;
+background-color: var(--surface0)
 }
 .icon-container span {
     font-size: 14px;
@@ -93,23 +95,25 @@ a:visited, a:link, a:active {
     font-family: 'Overpass Mono', monospace;
 }
 .github i, .github:hover span {
-    color: #c0e8fa !important;
+    color: var(--lavender) !important;
 }
 .gitlab i, .gitlab:hover span  {
-    color: #E24329 !important;
+    color: var(--peach) !important;
 }
 .telegram i, .telegram:hover span {
-    color: #0088cc !important;
+    color: var(--blue) !important;
 }
-.itch i, .itch:hover span {
-    color: #f68f1e !important;
-}
+
 .protonmail i, .protonmail:hover span {
-    color: #a25c9a !important;
+    color: var(--mauve) !important;
 }
 .nextdns i, .nextdns:hover span {
-    color: #00A3E0 !important;
+    color: var(--blue) !important;
+}
+.itch i, .itch:hover span {
+    color: var(--peach) !important;
 }
 .pixiv i, .pixiv:hover span {
-    color: #00A3E0 !important;
+    color: var(--blue) !important;
 }
+
