@@ -40,6 +40,11 @@
           "version": "2.2.1",
           "update_link": "https://github.com/Tokito-to/startpage/releases/download/v2.2.1/50fd4af065914df190c5-2.2.1.xpi",
           "update_hash": "sha256:77093de7ede111967f0a8d324d0ee4ddf12b8863b4074e354a54522c2cfca83c"
+        },
+        {
+          "version": "2.3.0",
+          "update_link": "https://github.com/Tokito-to/startpage/releases/download/v2.3.0/50fd4af065914df190c5-2.3.0.xpi",
+          "update_hash": "sha256:abfc2e7601749dc0a1cb6e950d709cd58eda1237a30b4b34faa71e05baf7462f"
         }
       ]
     }
